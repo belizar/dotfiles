@@ -1,0 +1,26 @@
+layout {
+    cwd "."
+    
+    tab name="Main" focus=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        
+        pane split_direction="vertical" {
+            // Neovim a la izquierda
+            pane size="75%" {
+                command "nvim"
+                args "."
+            }
+            
+            // Terminal a la derecha
+            pane size="25%" {
+                name "Terminal"
+            }
+        }
+        
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}

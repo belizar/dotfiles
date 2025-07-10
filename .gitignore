@@ -1,0 +1,15 @@
+# Archivos del sistema
+.DS_Store
+*.log
+
+# Directorios de desarrollo
+node_modules/
+.git/
+
+# Archivos temporales de Neovim
+.lazy/
+lazy-lock.json
+.luarc.json
+
+# Backups
+backup-*/

@@ -1,0 +1,60 @@
+layout {
+    cwd "."
+    
+    tab name="Development" focus=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        
+        pane split_direction="vertical" {
+            // Panel principal para Neovim
+            pane size="70%" {
+                command "nvim"
+            }
+            
+            // Panel derecho dividido para terminales
+            pane split_direction="horizontal" size="30%" {
+                // Terminal para servidor de desarrollo
+                pane size="50%" {
+                    name "Server"
+                }
+                
+                // Terminal para comandos git/generales
+                pane size="50%" {
+                    name "Git/Commands"
+                }
+            }
+        }
+        
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    
+    tab name="Testing" {
+        pane split_direction="horizontal" {
+            pane size="50%" {
+                name "Test Runner"
+            }
+            pane size="50%" {
+                name "Test Output"
+            }
+        }
+    }
+    
+    tab name="Monitoring" {
+        pane split_direction="vertical" {
+            pane size="50%" {
+                name "Logs"
+            }
+            pane split_direction="horizontal" size="50%" {
+                pane size="50%" {
+                    name "Build Watch"
+                }
+                pane size="50%" {
+                    name "Performance"
+                }
+            }
+        }
+    }
+}

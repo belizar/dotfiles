@@ -1,0 +1,63 @@
+layout {
+    cwd "."
+    
+    tab name="Frontend" focus=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        
+        pane split_direction="vertical" {
+            pane size="60%" {
+                command "nvim"
+            }
+            
+            pane split_direction="horizontal" size="40%" {
+                pane size="50%" {
+                    name "Frontend Dev"
+                    // Para npm run dev, yarn dev, etc.
+                }
+                pane size="50%" {
+                    name "Frontend Build"
+                    // Para npm run build:watch, etc.
+                }
+            }
+        }
+        
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    
+    tab name="Backend" {
+        pane split_direction="vertical" {
+            pane size="60%" {
+                command "nvim"
+            }
+            
+            pane split_direction="horizontal" size="40%" {
+                pane size="50%" {
+                    name "Backend Server"
+                    // Para python manage.py runserver, node server.js, etc.
+                }
+                pane size="50%" {
+                    name "Database"
+                    // Para conectar a DB, migrations, etc.
+                }
+            }
+        }
+    }
+    
+    tab name="Tools" {
+        pane split_direction="horizontal" {
+            pane size="33%" {
+                name "Git"
+            }
+            pane size="33%" {
+                name "Docker"
+            }
+            pane size="33%" {
+                name "Scripts"
+            }
+        }
+    }
+}
